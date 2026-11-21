@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>हम जल्द आ रहे हैं</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .scene {
+            text-align: center;
+            position: relative;
+        }
+        .fox-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        .fox {
+            width: 80px;
+            height: 80px;
+            background: #ff6500;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            animation: peek 3s infinite alternate;
+        }
+        .fox::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #ff6500;
+        }
+        .fox::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #ff6500;
+        }
+        .eyes {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .eye {
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: relative;
+            animation: blink 4s infinite;
+        }
+        .eye::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: 2px;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+        }
+        .message {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ff6500, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+        .sub-text {
+            color: #888;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1.5s;
+        }
+
+        @keyframes peek {
+            0% { transform: translateY(100px) scaleY(0.8); }
+            40% { transform: translateY(-10px) scaleY(1.1); }
+            50% { transform: translateY(0); }
+            80% { transform: translateY(0) rotate(-5deg); }
+            100% { transform: translateY(100px); }
+        }
+
+        @keyframes blink {
+            0%, 40%, 100% { transform: scaleY(1); }
+            20% { transform: scaleY(0.1); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scene">
+    <div class="fox-container">
+        <div class="fox">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+    </div>
+    <div class="message">We Are Coming Soon</div>
+    <div class="sub-text">मोशन ग्राफिक स्टूडियो धमाके के साथ आ रहा है</div>
+</div>
+
+</body>
+</html>
